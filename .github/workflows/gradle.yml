@@ -22,10 +22,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Change directory to CitizenService
+        run: cd CitizenService
       - name: Grant execute permissions to Gradle Wrapper
-        run: chmod +x ./CitizenService/gradlew
+        run: chmod +x ./gradlew
       - name: Build CitizenService with Gradle
-        run: ./CitizenService/gradlew build
+        run: ./gradlew build
 
   build_eureka_server:
     runs-on: ubuntu-latest
@@ -37,10 +39,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Change directory to EurekaServer
+        run: cd EurekaServer
       - name: Grant execute permissions to Gradle Wrapper
-        run: chmod +x ./EurekaServer/gradlew
+        run: chmod +x ./gradlew
       - name: Build EurekaServer with Gradle
-        run: ./EurekaServer/gradlew build
+        run: ./gradlew build
 
   build_vaccination_center:
     runs-on: ubuntu-latest
@@ -52,7 +56,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Change directory to VaccinationCenter
+        run: cd VaccinationCenter
       - name: Grant execute permissions to Gradle Wrapper
-        run: chmod +x ./VaccinationCenter/gradlew
+        run: chmod +x ./gradlew
       - name: Build VaccinationCenter with Gradle
-        run: ./VaccinationCenter/gradlew build
+        run: ./gradlew build
