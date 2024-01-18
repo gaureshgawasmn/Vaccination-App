@@ -48,3 +48,16 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// added below for docker image
+tasks.named('bootBuildImage') {
+	builder = 'paketobuildpacks/builder-jammy-base:latest'
+}
+
+ext{
+	set('customImageName', 'vaccination-center')
+}
+
+bootBuildImage {
+	imageName = "gaureshgawasmn/techlab-${customImageName}:"+ project.version // Replace with your desired image name and tag
+}
