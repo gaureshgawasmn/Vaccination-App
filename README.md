@@ -33,3 +33,10 @@ Consist of three microservices:
 ### System Requirements
 * Java 17
 * Gradle 8.5
+
+### Docker Images support
+* Added gradle task `gradle bootBuildImage` to each microservice which will create a docker image for that microservice.
+* Paths for each microservice:
+    * **Citizen Service** - docker.io/gaureshgawasmn/techlab-citizen-service:0.0.1-SNAPSHOT
+    * **Vaccination Center Service** - docker.io/gaureshgawasmn/techlab-eureka-server:0.0.1-SNAPSHOT
+    * **Eureka Server** - docker.io/gaureshgawasmn/techlab-vaccination-center:0.0.1-SNAPSHOT
