@@ -10,11 +10,15 @@ spring:
         - id: CITIZEN-SERVICE
           uri:
             lb://CITIZEN-SERVICE
+# can give direct url also
+#            http://localhost:8081
           predicates:
             - Path=/citizens/**
         - id: CENTER-SERVICE
           uri:
             lb://CENTER-SERVICE
+# can give direct url also
+#            http://localhost:8082
           predicates:
             - Path=/vaccination-center/**
 eureka:
