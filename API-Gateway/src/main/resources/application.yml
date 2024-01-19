@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: CITIZEN-SERVICE
+          uri:
+            lb://CITIZEN-SERVICE
+          predicates:
+            - Path=/citizens/**
+        - id: CENTER-SERVICE
+          uri:
+            lb://CENTER-SERVICE
+          predicates:
+            - Path=/vaccination-center/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
